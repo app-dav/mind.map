@@ -25,10 +25,6 @@ describe("GetNodes() returns a non-empty array of nodes", () => {
     expect(Array.isArray(nods)).toBe(true)
   });
 
-  it("GetNodes() not empty", () => {
-    var nods = nodServ.GetNodes();
-    expect(nods.length).toBeGreaterThan(0)
-  });
 })
 
 //describe("first test", () => {it("is true", () => expect(true).toBe(true))})

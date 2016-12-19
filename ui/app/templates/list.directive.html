@@ -1,7 +1,22 @@
-<div>
+
+<div class="container-fluid ">
+  <div  [hidden]="!openAddNode">
+    <div class="row"><span (click)="openAddNode=false;"><span class="glyphicon glyphicon-remove"></span></span></div>
+    <div class="row">
+      <add-node></add-node>
+    </div>
+  </div>
+<div [hidden]="openAddNode">
+  <div class=row >
+    <h3>Nodes</h3>
   <ul *ngFor="let nod of nodes">
-      <div>
-        <span>{{nod.Name}}</span>
-      </div>
+    <div>
+      <span>{{nod.Name}}</span>
+    </div>
   </ul>
+  </div>
+  <div class="row btn-group" >
+    <input type="button" id="addNodeButton" (click)="openAddNode = true" value="Add Node" class="btn btn-default"/>
+  </div>
+</div>
 </div>

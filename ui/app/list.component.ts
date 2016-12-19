@@ -8,7 +8,8 @@ import {NodeService} from "./services/node.service";
 
 @Component({
   selector: "list-view",
-  templateUrl: "./app/templates/list.directive.html"
+  templateUrl: "./templates/list.directive.html",
+  moduleId: module.id
 })
 
 
@@ -24,4 +25,5 @@ export class  ListComponent implements OnInit {
 
   private nodeService: NodeService;
   nodes: Node[];
+  openAddNode: boolean;
 }

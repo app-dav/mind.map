@@ -1,13 +1,15 @@
-<div ngModel="newNod">
-  <div>
-    <label for="nameTxt"></label>
-    <input type="text" id="nameTxt" />
+<form #nodeForm="ngForm" class="container-fluid form-control">
+  <div class="row">
+    <label for="nameTxt" class="col-md-1">{{nameLabel}}</label>
+    <input type="text" id="nameTxt" [(ngModel)]="newNod.Name" name="nameInput" required #nameTbx="ngModel" class="pull-left col-md-2"/>
+    <div [hidden]="nameTbx.valid || nameTbx.pristine">Name is required</div>
   </div>
-  <div>
-    <label for="descTxt"></label>
-    <input type="text" id="descTxt" />
+  <div class="row">
+    <label for="descTxt" class="col-md-1">{{descLabel}}</label>
+    <input type="text" id="descTxt" [(ngModel)]="newNod.Description" name="descriptionInput" class="col-md-2"/>{{newNod.Description}}
   </div>
-  <div>
-    <input type="button" id="newNodAddBtn"  onclick="addNode()" value="Add Node">
+  <div class="row">
+    <input type="button" id="newNodAddBtn" class="btn btn-success" (click)="addNode()" value="Add Node">
+    <input type="button" id="reset"  (click)="nodeForm.reset()" class="btn" value="Reset">
   </div>
-</div>
+</form>
