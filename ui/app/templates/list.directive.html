@@ -1,8 +1,8 @@
 
 <div class="container-fluid ">
   <div  [hidden]="!openAddNode">
-    <div class="row"><span (click)="openAddNode=false;"><span class="glyphicon glyphicon-remove"></span></span></div>
-    <div class="row">
+    <div class=""><span (click)="openAddNode=false;"><span class="glyphicon glyphicon-remove"></span></span></div>
+    <div class="">
       <add-node></add-node>
     </div>
   </div>
@@ -10,8 +10,16 @@
   <div class=row >
     <h3>Nodes</h3>
   <ul *ngFor="let nod of nodes">
-    <div>
-      <span>{{nod.Name}}</span>
+    <div class="row outlineEl">
+      <div class="form-group col-md-2">
+        <div class="row">
+          <label >{{nod.Name}}</label>
+        </div>
+        <div class="row">
+          <button type="button" id="editNodeBtn" (click)="EditNodeButton()" class="btn btn-primary">Edit Node</button>
+          <button type="button" id="deleteNodeBtn" (click)="DeleteNodeButton()" class="btn btn-default">Delete Node</button>
+        </div>
+      </div>
     </div>
   </ul>
   </div>

@@ -1,15 +1,22 @@
-<form #nodeForm="ngForm" class="container-fluid form-control">
-  <div class="row">
-    <label for="nameTxt" class="col-md-1">{{nameLabel}}</label>
-    <input type="text" id="nameTxt" [(ngModel)]="newNod.Name" name="nameInput" required #nameTbx="ngModel" class="pull-left col-md-2"/>
+<form #nodeForm="ngForm" class="container-fluid">
+  <div class="form-group">
+    <label for="nameTxt" class="control-label">{{nameLabel}}</label>
+    <div class="input-group  col-md-2">
+      <input type="text" id="nameTxt" [(ngModel)]="newNod.Name" name="nameInput" required #nameTbx="ngModel" class="form-control" placeholder="Name of the Node" />
+    </div>
     <div [hidden]="nameTbx.valid || nameTbx.pristine">Name is required</div>
   </div>
-  <div class="row">
-    <label for="descTxt" class="col-md-1">{{descLabel}}</label>
-    <input type="text" id="descTxt" [(ngModel)]="newNod.Description" name="descriptionInput" class="col-md-2"/>{{newNod.Description}}
+  <div class="form-group">
+    <label for="descTxt" class="control-label">{{descLabel}}</label>
+    <div class="input-group  col-md-2">
+    <input type="text" id="descTxt" [(ngModel)]="newNod.Description" name="descriptionInput" class="form-control" placeholder="Description"/>
+    </div>
   </div>
-  <div class="row">
-    <input type="button" id="newNodAddBtn" class="btn btn-success" (click)="addNode()" value="Add Node">
-    <input type="button" id="reset"  (click)="nodeForm.reset()" class="btn" value="Reset">
+  <div class="row"></div>
+  <div class="form-group" >
+    <button type="button" id="newNodAddBtn" class="btn btn-primary btn-small" (click)="addNode(); nodeAddSuccess=true;" >Add Node</button>
+    <button  type="button"  id="reset"  (click)="nodeForm.reset(); nodeAddSuccess=false;" class="btn btn-default  btn-small" >Reset</button>
   </div>
+  <h2 [hidden]="!nodeAddSuccess">Successfully Added!!</h2>
+
 </form>

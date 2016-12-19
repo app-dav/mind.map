@@ -14,5 +14,5 @@ export class NodeService{
     this.nodes.push(nod);
   }
 
-  private nodes:Node[] = []
+  private nodes:Node[] = [new Node("My first Node", "no desc")]
 }
