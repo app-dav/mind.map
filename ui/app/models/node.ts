@@ -2,7 +2,7 @@
  * Created by appel on 12/13/2016.
  */
 
-export class Node implements Nod{
+export class Node {
 
   // Name: string;
   // Description: string
@@ -11,8 +11,3 @@ export class Node implements Nod{
   }
  }
 
-interface Nod{
-  Name: string;
-  Description: string
-
-}
