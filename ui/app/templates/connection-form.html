@@ -1,0 +1,24 @@
+<form #connectFrom ="ngForm" class="container-fluid">
+  <div *ngIf="isAdd">
+    <h3 class="h3">{{addHeader}}</h3>
+  </div>
+  <div *ngIf="!isAdd">
+      <h3 class="h3">{{editHeader}}</h3>
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="nameTxt">{{conNameLabel}}</label>
+    <div class="input-group col-md-2">
+      <input type="text" id="nameTxt" class="form-control" name="nameTxt" [(ngModel)]="conName" placeholder="{{namePlaceHolder}}" required />
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="descriptTxt">{{conDescLabel}}</label>
+    <div class="input-group col-md-2">
+      <input type="text" id="descriptTxt" name="descriptTxt" class="form-control" [(ngModel)]="conDescript" placeholder="{{descPlaceHolder}}" />
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" (click)="connectionAdd();">{{saveBtn}}</button>
+    <button class="btn btn-default" (click)="connectFrom.reset()">{{resetBtn}}</button>
+  </div>
+</form>

@@ -1,12 +1,18 @@
 
 <div class="container-fluid ">
-  <div  [hidden]="!openAddNode">
-    <div class=""><span (click)="openAddNode=false;"><span class="glyphicon glyphicon-remove"></span></span></div>
+  <section> <div class=""><span (click)="openTab = LIST_NODE;"><span class="glyphicon glyphicon-remove"></span></span></div>
+  <div  [hidden]="openTab !== ADD_NODE">
     <div class="">
       <add-node></add-node>
     </div>
   </div>
-<div [hidden]="openAddNode">
+  <div [hidden]="openTab !== CONNECT_NODE">
+    <div>
+      <connection-form></connection-form>
+    </div>
+  </div>
+  </section>
+  <div [hidden]="openTab !== LIST_NODE">
   <div class=row >
     <h3>Nodes</h3>
   <ul *ngFor="let nod of nodes">
@@ -24,7 +30,8 @@
   </ul>
   </div>
   <div class="row btn-group" >
-    <input type="button" id="addNodeButton" (click)="openAddNode = true" value="Add Node" class="btn btn-default"/>
+    <input type="button" id="addNodeButton" (click)="openTab = ADD_NODE" value="Add Node" class="btn btn-default"/>
+    <input type="button" id="connectNodeButton" (click)="openTab = CONNECT_NODE" value="Connect Node" class="btn btn-default"/>
   </div>
 </div>
 </div>

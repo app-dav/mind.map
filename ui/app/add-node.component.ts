@@ -27,4 +27,5 @@ export class AddNodeComponent {
 
   descLabel: string = "Enter Desc (opt)";
   nameLabel: string = "Enter Name";
+  nodeAddSuccess: boolean
 }
