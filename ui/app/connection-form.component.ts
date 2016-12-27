@@ -3,6 +3,9 @@
  */
 import {Component, Input} from "@angular/core";
 
+import {Connection} from "./models/connection";
+import {ConnectionService} from "./services/connection.service";
+
 @Component({
   selector: "connection-form",
   templateUrl: "./templates/connection-form.html",
@@ -26,10 +29,14 @@ export class ConnectionFormComponent{
     this.isAdd = add;
   }*/
 
-  conName: string;
-  conDescript: string;
+  connectionModel: Connection;
 
+  constructor(private conService: ConnectionService){
+
+  }
+
+  //todo add close
   connectionAdd(){
-
+      this.conService.AddConnection(this.connectionModel);
   }
 }

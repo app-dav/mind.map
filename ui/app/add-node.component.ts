@@ -5,6 +5,7 @@ import {Component, Input} from "@angular/core";
 
 import {Node} from "./models/node";
 import {NodeService} from "./services/node.service";
+import {DH_NOT_SUITABLE_GENERATOR} from "constants";
 
 @Component({
   templateUrl: "./templates/add.node.html",
@@ -18,14 +19,15 @@ export class AddNodeComponent {
 
   }
 
-  addNode(): void{
-    this.nodService.AddNode(this.newNod);
-  }
-
   @Input()
-  newNod: Node = {Name: "", Description:""};
+  newNod: Node = Object.create(Node.prototype);
 
   descLabel: string = "Enter Desc (opt)";
   nameLabel: string = "Enter Name";
   nodeAddSuccess: boolean
+
+  addNode(): void{
+    this.nodService.AddNode(this.newNod);
+  }
+
 }

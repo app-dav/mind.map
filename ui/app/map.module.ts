@@ -9,12 +9,12 @@ import {ConnectionFormComponent} from "./connection-form.component";
 
 
 import {NodeService} from "./services/node.service";
-import {TabService} from "./services/tab.service";
+import {ConnectionService} from "./services/connection.service";
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
   declarations: [ MapComponent, ListComponent, AddNodeComponent, ConnectionFormComponent],
   bootstrap:    [ ListComponent ],
-  providers: [NodeService, TabService]
+  providers: [NodeService, ConnectionService]
 })
 export class MapModule { }

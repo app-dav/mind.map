@@ -5,7 +5,6 @@ import {Component, OnInit} from "@angular/core";
 
 import {Node} from "./models/node";
 import {NodeService} from "./services/node.service";
-import {TabService} from "./services/tab.service";
 
 @Component({
   selector: "list-view",
@@ -15,7 +14,7 @@ import {TabService} from "./services/tab.service";
 
 export class  ListComponent implements OnInit {
 
-  constructor(private nodService: NodeService, private tabService: TabService) {
+  constructor(private nodService: NodeService) {
   }
 
   ngOnInit(): void {

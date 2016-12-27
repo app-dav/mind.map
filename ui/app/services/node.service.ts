@@ -7,12 +7,18 @@ import {Node} from "../models/node";
 
 @Injectable()
 export class NodeService{
+
+  private _nodes:Node[] = [Object.create(Node.prototype)]
+
   GetNodes(): Node[] {
-    return this.nodes;
+    return this._nodes;
   }
   AddNode(nod:Node): void {
-    this.nodes.push(nod);
+    this._nodes.push(nod);
   }
 
-  private nodes:Node[] = [new Node("My first Node", "no desc")]
+  GetNode(id: number): Node {
+    const rtn = this._nodes.find((element)=>{return element.Id === id});
+    return rtn ? rtn : Object.create(Node.prototype);
+  }
 }

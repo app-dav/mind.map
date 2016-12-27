@@ -4,10 +4,10 @@
 
 export class Node {
 
-  // Name: string;
-  // Description: string
+  Id: number;
 
-  constructor(public Name: string, public Description: string){
-  }
+   Name: string;
+   Description: string
+
  }
 
