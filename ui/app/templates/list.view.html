@@ -16,12 +16,15 @@
   <div class=row >
     <h3>Nodes</h3>
   <ul *ngFor="let nod of nodes">
-    <div class="row outlineEl">
-      <div class="form-group col-md-2">
-        <div class="row">
+    <div class="row">
+      <div class="form-group col-md-2 panel panel-default">
+        <div class="row panel panel-heading">
           <label >{{nod.Name}}</label>
         </div>
-        <div class="row">
+        <div class=" panel panel-body">
+          <span >{{nod.Description}}</span>
+        </div>
+        <div class="panel panel-group">
           <button type="button" id="editNodeBtn" (click)="EditNodeButton()" class="btn btn-primary">Edit Node</button>
           <button type="button" id="deleteNodeBtn" (click)="DeleteNodeButton()" class="btn btn-default">Delete Node</button>
         </div>
