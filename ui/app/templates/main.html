@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+  <nav class="nav col-md-1">
+    <ul class="nav-pills nav-stacked list-unstyled">
+      <li class="active "><button class="btn btn-link" (click)="currentTab = LIST_VIEW">{{listLabelText}}</button></li>
+      <li><button class="btn btn-link" (click)="currentTab = MAP_VIEW">{{mapLabelText}}</button></li>
+    </ul>
+  </nav>
+  <section id="main" name="main" class="col-md-offset-1">
+    <div>
+      <div [hidden]="currentTab !== LIST_VIEW">
+        <list-view></list-view>
+      </div>
+      <div [hidden]="currentTab !== MAP_VIEW">
+        <map-view></map-view>
+      </div>
+    </div>
+  </section>
+  </div>
+</div>

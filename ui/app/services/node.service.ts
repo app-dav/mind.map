@@ -8,7 +8,7 @@ import {Node} from "../models/node";
 @Injectable()
 export class NodeService{
 
-  private _nodes:Node[] = [Object.create(Node.prototype)]
+  private _nodes:Node[] = [Object.create(Node.prototype, { Id: {value:1}, Name: {value: "Firsties"}, Description: { value:"First Desc"}})]
 
   GetNodes(): Node[] {
     return this._nodes;
